@@ -125,8 +125,8 @@
                        :smeagol-passwd
                        :smeagol-site-title)
                      config-env-transforms))]
-      (if (env :dev)
-        (timbre/debug
+      (do
+        (timbre/info
           "Loaded configuration\n"
           (with-out-str (clojure.pprint/pprint config))))
       config)
